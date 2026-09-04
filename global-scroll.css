@@ -1,0 +1,12 @@
+main{position:relative;z-index:1}
+.sequence-wrap{height:0;position:static;z-index:0}
+.sequence-sticky{position:fixed;inset:0;z-index:0;height:100vh;background:transparent;pointer-events:none}
+#sequenceCanvas{position:absolute;inset:0;z-index:0}
+.sequence-glow{z-index:1}
+.sequence-status,.chapter{z-index:2}
+.hero,.specs,.product-details,.closing{position:relative;z-index:1;background-color:rgba(8,9,9,.38)}
+.hero{background:radial-gradient(ellipse at 70% 45%,rgba(32,38,36,.44) 0%,rgba(13,17,17,.36) 42%,rgba(8,9,9,.48) 70%)}
+.specs{background:rgba(8,9,9,.48)}
+.product-details{background:rgba(16,20,19,.54)}
+.closing{background:linear-gradient(120deg,rgba(16,21,20,.54),rgba(39,48,45,.48))}
+footer{position:relative;z-index:1;background:rgba(8,9,9,.82)}
