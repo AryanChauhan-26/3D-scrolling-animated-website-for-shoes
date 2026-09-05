@@ -1,5 +1,5 @@
-const frameCount = 213;
-const framePath = (frame) => `3d%20scroller%20/ezgif-frame-${String(frame).padStart(3, '0')}.jpg`;
+const frameCount = 212;
+const framePath = (frame) => `3d%20scroller%20/ezgif-frame-${String(frame + 1).padStart(3, '0')}.jpg`;
 const canvas = document.getElementById('sequenceCanvas');
 const context = canvas.getContext('2d');
 const frameReadout = document.getElementById('frameReadout');
