@@ -46,8 +46,7 @@ frames.forEach((image) => image.addEventListener('load', () => drawFrame(current
 window.addEventListener('resize', sizeCanvas);
 window.addEventListener('scroll', updateSequence, { passive: true });
 document.querySelectorAll('.buy-button').forEach((button) => button.addEventListener('click', () => {
-  button.innerHTML = 'Added to bag <span>✓</span>';
-  setTimeout(() => { button.innerHTML = button.id === 'closingBuy' ? 'Shop the collection <span>↗</span>' : 'Shop now <span>↗</span>'; }, 1800);
+  window.location.href = 'shop.html';
 }));
 sizeCanvas();
 updateSequence();
