@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d8ff4f" />
+  <title>Shop | Sole Footwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="details.css" />
+</head>
+<body class="shop-page">
+  <header class="site-header">
+    <a class="sony-mark" href="index.html#top" aria-label="Sole home">SOLE</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html#top">Sneaker series</a><a href="index.html#detail">Construction</a><a href="index.html#product-details">Details</a><a class="active" href="shop.html">Shop</a>
+    </nav>
+    <div class="header-actions">
+      <span class="availability">New season</span>
+      <span class="shop-bag-count" id="shopBagCount">Bag 0</span>
+    </div>
+  </header>
+
+  <main class="shop-page-main">
+    <section class="shop" aria-labelledby="shop-title">
+      <div class="shop-heading"><div><p class="eyebrow">Sole / Shop the series</p><h2 id="shop-title">Pick your<br><i>everyday.</i></h2></div><p class="shop-note">Three colorways. One responsive feel. Free delivery on every pair.</p></div>
+      <div class="shop-grid">
+        <article class="shoe-card"><div class="shoe-image"><img src="3d%20scroller%20/ezgif-frame-032.jpg" alt="XM6 sneaker in acid lime" loading="lazy"><span class="card-tag">New</span></div><div class="shoe-card-meta"><div><h3>XM6 / Acid</h3><p>Signature trainer / Lime</p></div><strong>$160</strong></div><button class="add-button" type="button" data-product="XM6 / Acid">Add to bag <span>+</span></button></article>
+        <article class="shoe-card"><div class="shoe-image"><img src="3d%20scroller%20/ezgif-frame-146.jpg" alt="XM6 sneaker in cloud white" loading="lazy"></div><div class="shoe-card-meta"><div><h3>XM6 / Cloud</h3><p>Signature trainer / White</p></div><strong>$160</strong></div><button class="add-button" type="button" data-product="XM6 / Cloud">Add to bag <span>+</span></button></article>
+        <article class="shoe-card"><div class="shoe-image"><img src="3d%20scroller%20/ezgif-frame-191.jpg" alt="XM6 sneaker in night black" loading="lazy"></div><div class="shoe-card-meta"><div><h3>XM6 / Night</h3><p>Signature trainer / Black</p></div><strong>$160</strong></div><button class="add-button" type="button" data-product="XM6 / Night">Add to bag <span>+</span></button></article>
+      </div>
+      <div class="shop-footer"><span id="bagStatus">Your bag is ready.</span><span>Free shipping / 30-day returns</span></div>
+    </section>
+  </main>
+  <footer><span>SOLE / FOOTWEAR</span><span>© 2026 Sole Studio</span></footer>
+  <script src="shop-script.js"></script>
+</body>
+</html>
