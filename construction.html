@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070908" />
+  <title>Construction | Sole Sneaker Series</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="details.css" />
+  <link rel="stylesheet" href="global-scroll.css" />
+  <style>
+    .construction-header {
+      min-height: 50vh;
+      padding: 205px 6vw 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: radial-gradient(ellipse at 72% 42%, rgba(42, 56, 48, 0.82) 0%, rgba(15, 22, 19, 0.58) 34%, rgba(7, 9, 8, 0.9) 72%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .construction-header:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 9, 8, 0.86) 0%, transparent 65%), linear-gradient(0deg, rgba(7, 9, 8, 0.8), transparent 35%);
+      pointer-events: none;
+    }
+
+    .construction-title {
+      position: relative;
+      z-index: 1;
+    }
+
+    .construction-title h1 {
+      font-size: clamp(76px, 13vw, 196px);
+      line-height: 0.87;
+      letter-spacing: -0.08em;
+      margin: 48px 0 38px;
+      text-wrap: balance;
+      font-weight: 500;
+    }
+
+    .construction-title h1 span {
+      color: var(--acid);
+      font-style: normal;
+    }
+
+    .construction-intro {
+      max-width: 390px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(242, 237, 227, 0.67);
+      position: relative;
+      z-index: 1;
+    }
+
+    .construction-sequence {
+      padding: 150px 6vw;
+      background: linear-gradient(135deg, rgba(22, 28, 25, 0.94), rgba(9, 13, 11, 0.9));
+      border-top: 1px solid var(--line);
+    }
+
+    .sequence-title {
+      margin-bottom: 60px;
+    }
+
+    .sequence-title .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--acid);
+      text-transform: uppercase;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .sequence-title h2 {
+      font-size: clamp(52px, 7vw, 105px);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      font-weight: 500;
+      margin: 40px 0;
+      color: var(--warm);
+    }
+
+    .sequence-title h2 i {
+      color: var(--acid);
+      font-style: normal;
+    }
+
+    .sequence-description {
+      max-width: 320px;
+      margin-bottom: 50px;
+      color: rgba(242, 237, 227, 0.67);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .sequence-canvas-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    #constructionCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .sequence-legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+      padding-top: 60px;
+      border-top: 1px solid var(--line);
+    }
+
+    .legend-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .legend-item span {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--acid);
+      text-transform: uppercase;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .legend-item strong {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--warm);
+    }
+
+    .legend-item p {
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(242, 237, 227, 0.67);
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      color: var(--acid);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: gap 0.2s ease;
+    }
+
+    .back-button:hover {
+      gap: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .construction-header {
+        padding: 140px 6vw 60px;
+      }
+
+      .construction-title h1 {
+        margin: 35px 0 28px;
+      }
+
+      .construction-intro {
+        font-size: 13px;
+        max-width: 285px;
+      }
+
+      .construction-sequence {
+        padding: 110px 6vw;
+      }
+
+      .sequence-legend {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="sony-mark" href="index.html" aria-label="Sneaker series home">SOLE</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Sneaker series</a><a class="active" href="construction.html">Construction</a><a href="index.html#product-details">Details</a><a href="shop.html">Shop</a>
+    </nav>
+    <div class="header-actions">
+      <span class="availability">New season</span>
+      <button class="buy-button" id="buyButton">Shop now <span>↗</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="construction-header">
+      <div class="construction-title">
+        <p class="eyebrow">Sole / Signature Series / 2026</p>
+        <h1>Crafted with <span>precision.</span></h1>
+      </div>
+      <p class="construction-intro">Explore the detailed construction process that goes into creating each pair of XM6 sneakers. Every component is engineered for durability, comfort, and performance.</p>
+    </section>
+
+    <section class="construction-sequence">
+      <div class="sequence-title">
+        <p class="eyebrow">The build process</p>
+        <h2>Manufacturing <i>excellence.</i></h2>
+      </div>
+      <p class="sequence-description">Watch as we build the XM6 from the ground up, layer by layer. This animation showcases the 47-step construction process that transforms raw materials into your perfect pair.</p>
+
+      <div class="sequence-canvas-wrap">
+        <canvas id="constructionCanvas" aria-label="Animated sneaker construction sequence"></canvas>
+      </div>
+
+      <div class="sequence-legend">
+        <div class="legend-item">
+          <span>Step 1</span>
+          <strong>Foundation</strong>
+          <p>Premium outsole is prepared and cleaned for optimal adhesion.</p>
+        </div>
+        <div class="legend-item">
+          <span>Step 2</span>
+          <strong>Midsole Attachment</strong>
+          <p>CloudForm EVA foam midsole is bonded with precision techniques.</p>
+        </div>
+        <div class="legend-item">
+          <span>Step 3</span>
+          <strong>Upper Construction</strong>
+          <p>Engineered knit mesh upper is carefully stitched together.</p>
+        </div>
+        <div class="legend-item">
+          <span>Step 4</span>
+          <strong>Reinforcement</strong>
+          <p>Strategic reinforcements are added for durability and support.</p>
+        </div>
+        <div class="legend-item">
+          <span>Step 5</span>
+          <strong>Quality Check</strong>
+          <p>Each shoe passes through rigorous quality control measures.</p>
+        </div>
+        <div class="legend-item">
+          <span>Step 6</span>
+          <strong>Final Polish</strong>
+          <p>The completed sneaker undergoes final inspection and packaging.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p class="eyebrow">Signature sneaker series</p>
+      <h2>Ready to <i>experience</i> <br>it yourself?</h2>
+      <button class="buy-button large" id="closingBuy">Shop the collection <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer><span>SOLE / FOOTWEAR</span><span>© 2026 Sole Studio</span></footer>
+
+  <script>
+    const frameCount = 212;
+    const framePath = (frame) => `3d%20scroller%20/ezgif-frame-${String(frame + 1).padStart(3, '0')}.jpg`;
+    const canvas = document.getElementById('constructionCanvas');
+    const context = canvas.getContext('2d');
+    const frames = Array.from({ length: frameCount }, (_, index) => {
+      const image = new Image();
+      image.src = framePath(index + 1);
+      return image;
+    });
+    let currentFrame = 0;
+
+    function sizeCanvas() {
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = canvas.clientWidth * ratio;
+      canvas.height = canvas.clientHeight * ratio;
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      drawFrame(currentFrame);
+    }
+
+    function drawFrame(index) {
+      const image = frames[index];
+      if (!image?.complete || !image.naturalWidth) return;
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+      const drawWidth = image.naturalWidth * scale;
+      const drawHeight = image.naturalHeight * scale;
+      context.clearRect(0, 0, width, height);
+      context.drawImage(image, (width - drawWidth) / 2, (height - drawHeight) / 2, drawWidth, drawHeight);
+    }
+
+    frames.forEach((image) => image.addEventListener('load', () => drawFrame(currentFrame), { once: true }));
+    window.addEventListener('resize', sizeCanvas);
+    sizeCanvas();
+
+    document.querySelectorAll('.buy-button').forEach((button) => button.addEventListener('click', () => {
+      window.location.href = 'shop.html';
+    }));
+  </script>
+</body>
+</html>
