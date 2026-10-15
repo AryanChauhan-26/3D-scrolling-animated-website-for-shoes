@@ -10,6 +10,9 @@ const frames = Array.from({ length: frameCount }, (_, index) => {
   return image;
 });
 let currentFrame = 0;
+let targetFrame = 0;
+let animationFrame = 0;
+let lastAnimationTime = 0;
 
 function sizeCanvas() {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
@@ -20,7 +23,7 @@ function sizeCanvas() {
 }
 
 function drawFrame(index) {
-  const image = frames[index];
+  const image = frames[Math.round(index)];
   if (!image?.complete || !image.naturalWidth) return;
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
@@ -34,11 +37,25 @@ function drawFrame(index) {
 function updateSequence() {
   const distance = document.documentElement.scrollHeight - window.innerHeight;
   const progress = distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0;
-  const nextFrame = Math.min(frameCount - 1, Math.floor(progress * (frameCount - 1)));
-  if (nextFrame !== currentFrame) {
-    currentFrame = nextFrame;
-    drawFrame(currentFrame);
-    frameReadout.textContent = String(currentFrame + 1).padStart(2, '0');
+  targetFrame = progress * (frameCount - 1);
+  if (!animationFrame) animationFrame = requestAnimationFrame(animateSequence);
+}
+
+function animateSequence(timestamp) {
+  const elapsed = lastAnimationTime ? timestamp - lastAnimationTime : 16;
+  lastAnimationTime = timestamp;
+  currentFrame += (targetFrame - currentFrame) * (1 - Math.exp(-elapsed / 90));
+  const frameIndex = Math.round(currentFrame);
+  drawFrame(frameIndex);
+  frameReadout.textContent = String(frameIndex + 1).padStart(2, '0');
+
+  if (Math.abs(targetFrame - currentFrame) > 0.05) {
+    animationFrame = requestAnimationFrame(animateSequence);
+  } else {
+    currentFrame = targetFrame;
+    drawFrame(Math.round(currentFrame));
+    animationFrame = 0;
+    lastAnimationTime = 0;
   }
 }
 
