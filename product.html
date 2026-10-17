@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080909" />
+  <meta name="description" content="Explore sneaker details, choose your size, and add your pair to the bag." />
+  <title>Product details | Sole Footwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="details.css" />
+</head>
+<body class="product-page">
+  <header class="site-header">
+    <a class="sony-mark" href="index.html#top" aria-label="Sole home">SOLE</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html#top">Sneaker series</a><a href="index.html#detail">Construction</a><a class="active" href="#product-details">Details</a><a href="shop.html">Shop</a>
+    </nav>
+    <div class="header-actions">
+      <span class="availability">New season</span>
+      <span class="shop-bag-count" id="shopBagCount" aria-live="polite">Bag 0</span>
+    </div>
+  </header>
+
+  <main class="product-main" id="product-details">
+    <nav class="product-breadcrumb" aria-label="Breadcrumb">
+      <a href="shop.html">Shop</a><span aria-hidden="true">/</span><span id="productBreadcrumb">Sneakers</span>
+    </nav>
+    <section class="product-showcase" aria-labelledby="productName">
+      <div class="product-visual">
+        <span class="product-edition" id="productEdition">SOLE / SIGNATURE SERIES</span>
+        <img id="productImage" src="shopping.jpeg" alt="White Nike Air Force 1 sneaker">
+        <span class="product-image-index">01 <i></i> 01</span>
+      </div>
+      <div class="product-buy-panel">
+        <p class="eyebrow" id="productCategory">Sole / Signature series / 2026</p>
+        <h1 id="productName">Air Force 1 (White)</h1>
+        <div class="product-price-row"><strong id="productPrice">$160</strong><span>Free shipping</span></div>
+        <p class="product-description" id="productDescription">An everyday classic, ready for your rotation. Choose your size to make it yours.</p>
+
+        <fieldset class="size-picker">
+          <legend><span>Select size</span><span>US / Men's</span></legend>
+          <div class="size-options" role="group" aria-label="Available shoe sizes">
+            <button type="button" class="size-option" aria-pressed="false">7</button>
+            <button type="button" class="size-option" aria-pressed="false">8</button>
+            <button type="button" class="size-option" aria-pressed="false">9</button>
+            <button type="button" class="size-option" aria-pressed="false">10</button>
+            <button type="button" class="size-option" aria-pressed="false">11</button>
+            <button type="button" class="size-option" aria-pressed="false">12</button>
+          </div>
+          <span class="size-message" id="sizeMessage" aria-live="polite">Please select a size.</span>
+        </fieldset>
+
+        <div class="product-actions">
+          <div class="quantity-picker" aria-label="Quantity">
+            <button type="button" id="decreaseQuantity" aria-label="Decrease quantity">−</button>
+            <output id="quantityValue" aria-live="polite">1</output>
+            <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="product-add-button" type="button" id="addProductButton">Add to bag <span>↗</span></button>
+        </div>
+        <p class="product-status" id="productStatus" role="status">Complimentary delivery / Easy 30-day returns</p>
+
+        <div class="product-perks">
+          <div><span>01</span><p>Free delivery<small>On every pair</small></p></div>
+          <div><span>02</span><p>Easy returns<small>Within 30 days</small></p></div>
+          <div><span>03</span><p>Need a hand?<small>We're here to help</small></p></div>
+        </div>
+      </div>
+    </section>
+    <section class="product-story" aria-label="Product information">
+      <p class="eyebrow">The details</p>
+      <h2>Good from<br><i>every angle.</i></h2>
+      <p>Find your fit, choose your size, and make this pair part of your everyday rotation.</p>
+      <a href="shop.html">Back to the collection <span>↗</span></a>
+    </section>
+  </main>
+  <footer><span>SOLE / FOOTWEAR</span><span>© 2026 Sole Studio</span></footer>
+  <script src="product-script.js"></script>
+</body>
+</html>
